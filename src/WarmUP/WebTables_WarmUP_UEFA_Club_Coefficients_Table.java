@@ -22,7 +22,7 @@ public class WebTables_WarmUP_UEFA_Club_Coefficients_Table {
         driver.get("https://www.uefa.com/");
         Thread.sleep(1000);
 
-// 2. click on "Full standings" button for Club coefficients (Association club coefficients )
+// 2. click on "Full standings" button for Club coefficients (not Association club coefficients )
         driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
         Thread.sleep(1000);
 
