@@ -23,7 +23,7 @@ public class WebTables_WarmUP_UEFA_Club_Coefficients_Table {
         Thread.sleep(1000);
 
 // 2. click on "Full standings" button for Club coefficients (not Association club coefficients )
-        driver.findElement(By.xpath("//*[@id=\"onetrust-accept-btn-handler\"]")).click();
+        driver.findElement(By.xpath("//button[@id='onetrust-accept-btn-handler']")).click();
         Thread.sleep(1000);
 
         driver.findElement(By.xpath("//a[@class='btn btn-secondary ranking-button ']")).click();
@@ -31,7 +31,7 @@ public class WebTables_WarmUP_UEFA_Club_Coefficients_Table {
 
 // 3. Please select Country
 
-        String country = "AZE";
+        String country = "ESP";
 
 // 4. Get list of teams from Selected Country
         List<WebElement> row = driver.findElements(By.xpath("//*[@id=\"DataTables_Table_0\"]/tbody/tr"));
@@ -41,7 +41,7 @@ public class WebTables_WarmUP_UEFA_Club_Coefficients_Table {
 
         for (WebElement webElement : row) {
             teamsCount++;
-            if ( webElement.getText().toLowerCase().contains(country.toLowerCase()) ){
+            if ( webElement.getText().contains(country) ){
                 countryTeam++;
                 System.out.println("Team name:         " + webElement.findElement(By.className("table_member-name")).getText());
                 System.out.println("Team total points: " + webElement.findElement(By.className("table_member-points")).getText());
@@ -49,6 +49,6 @@ public class WebTables_WarmUP_UEFA_Club_Coefficients_Table {
                  System.out.println("************");System.out.println();
             }        }
 
-        System.out.println(country.toUpperCase() + " teams are " + countryTeam);
+        System.out.println(country + " teams are " + countryTeam);
         System.out.println("Total teams "+ teamsCount   );
     }}
